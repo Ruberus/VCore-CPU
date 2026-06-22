@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_VCore.uut.my_instruction_memory.inst.native_mem_mapped_module.blk_mem_gen_v8_4_12_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Simulation complete.
+$finish called at time : 700 ns : File "C:/Users/VIJAY/Downloads/BRAM_allins-store.xpr/BRAM/BRAM.srcs/sim_1/new/tb_VCore.v" Line 65
