@@ -58,8 +58,8 @@ module VCore (
     
     wire [31:0] my_PC_read, my_reado_1, my_reado_2;
     wire [31:0] my_w_data;
-    wire my_read1_en, my_read2_en, my_w_en;
-    wire [4:0] my_read_1_addr, my_read_2_addr, my_w_addr, my_mov_addr, my_RF_Opcode, my_read__addr;
+    wire my_read1_en, my_read2_en, my_w_en,read4_en;
+    wire [4:0] my_read_1_addr, my_read_2_addr, my_w_addr, my_mov_addr, my_RF_Opcode, my_read_4_addr;
     
     register_file my_register_file (   
         .PC_read(my_PC_read),
@@ -76,12 +76,15 @@ module VCore (
         .read_4_addr(my_read_4_addr),
         .w_addr(my_w_addr),
         .RF_Opcode(my_RF_Opcode),
-        .mov_addr(my_mov_addr)
+        .mov_addr(my_mov_addr),
+        .reset(reset),
+        .read4_en(read4_en)
         );
                 
     wire [3:0] my_ins_cond;
     wire [3:0] my_flag;
     wire my_exec;
+    wire comparator_en;
     
     Comparator my_comparator(
     .ins_cond(my_ins_cond),
@@ -91,7 +94,8 @@ module VCore (
     .clkcmp(clk)
     );
      
-    wire [4:0] ALU_opcode;
+    //wire [4:0] ALU_opcode;
+    wire [3:0] ALU_opcode;
     wire [4:0] my_Opcode, my_LS_Opcode;
     wire [31:0] lsf_mem_read, my_imm_18;
     wire [31:0] my_lsf_input;
@@ -101,7 +105,7 @@ module VCore (
     CU my_CU (
     .bram_data_out(bram_data_out),
     .bram_address(bram_address),
-    .bram_write_enable(bram_write_enable),
+    //dead: .bram_write_enable(bram_write_enable),
     .exec(my_exec),
     .PC(my_PC_read),
     .conditional_code(my_ins_cond),
@@ -126,7 +130,9 @@ module VCore (
     .input_B_selmux(input_B_selmux),
     .comparator_en(comparator_en),
     .reg4_addr(my_read_4_addr),
-    .w_en_a(bram_write_enable)
+    .w_en_a(bram_write_enable),
+    .reset(reset),
+    .read4_en(read4_en)
     );
     
     //figure out how many bits is ALUOpcode in actuality
@@ -134,7 +140,7 @@ module VCore (
     
     ALU my_ALU(
     .opcode(ALU_opcode),
-    .input_A(my_reado_1), 
+    .input_A(my_reado_1),   
     .input_B(my_input_B),
     .output_result(ALU_w_data),
     .flag(my_flag),

@@ -1,6 +1,26 @@
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module tb_VCore.uut.my_instruction_memory.inst.native_mem_mapped_module.blk_mem_gen_v8_4_12_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-Simulation complete.
-$finish called at time : 700 ns : File "C:/Users/VIJAY/Downloads/BRAM_allins-store.xpr/BRAM/BRAM.srcs/sim_1/new/tb_VCore.v" Line 65
+Block Memory Generator module tb_fib4_loop.dut.my_instruction_memory.inst.native_mem_mapped_module.blk_mem_gen_v8_4_12_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ok   loop start #1: a=0 b=1 count=3  (saved flags V Z C N = 0000)
+645000 CMP: st=4 cmp_en=1 alu_op=1011 rd1=24 rd2=1 alu_flag=0010 stored=0000
+655000 CMP: st=3 cmp_en=1 alu_op=1011 rd1=2 rd2=0 alu_flag=0010 stored=0010
+665000 CMP: st=5 cmp_en=0 alu_op=1101 rd1=2 rd2=0 alu_flag=0000 stored=0010
+675000 CMP: st=6 cmp_en=0 alu_op=1101 rd1=28 rd2=0 alu_flag=0000 stored=0010
+695000 CMP: st=7 cmp_en=0 alu_op=1101 rd1=28 rd2=0 alu_flag=0000 stored=0010
+ok   loop start #2: a=1 b=1 count=2  (saved flags V Z C N = 0010)
+1105000 CMP: st=4 cmp_en=1 alu_op=1011 rd1=24 rd2=1 alu_flag=0010 stored=0010
+1115000 CMP: st=3 cmp_en=1 alu_op=1011 rd1=1 rd2=0 alu_flag=0010 stored=0010
+1125000 CMP: st=5 cmp_en=0 alu_op=1101 rd1=1 rd2=0 alu_flag=0000 stored=0010
+1135000 CMP: st=6 cmp_en=0 alu_op=1101 rd1=28 rd2=0 alu_flag=0000 stored=0010
+1155000 CMP: st=7 cmp_en=0 alu_op=1101 rd1=28 rd2=0 alu_flag=0000 stored=0010
+ok   loop start #3: a=1 b=2 count=1  (saved flags V Z C N = 0010)
+1565000 CMP: st=4 cmp_en=1 alu_op=1011 rd1=24 rd2=2 alu_flag=0010 stored=0010
+1575000 CMP: st=3 cmp_en=1 alu_op=1011 rd1=0 rd2=0 alu_flag=0110 stored=0010
+1585000 CMP: st=5 cmp_en=0 alu_op=1101 rd1=0 rd2=0 alu_flag=0000 stored=0110
+1595000 CMP: st=6 cmp_en=0 alu_op=1101 rd1=28 rd2=0 alu_flag=0000 stored=0110
+1615000 CMP: st=7 cmp_en=0 alu_op=1101 rd1=28 rd2=0 alu_flag=0000 stored=0110
+Program finished after 165 cycles, 3 loop passes
+Fibonacci(4) = r3 = 3 (expected 3)
+ALL TESTS PASSED
+$finish called at time : 1705 ns : File "C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sim_1/new/tb_fibonacci.v" Line 127

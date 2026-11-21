@@ -8,13 +8,14 @@
   **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Sat May 30 15:05:02 2026
+  **** Start of session at: Sat Nov 21 09:50:07 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source VCore.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental {D:/code stuff/BRAM/BRAM.srcs/utils_1/imports/synth_1/he.dcp}
-INFO: [Vivado 12-5825] Read reference checkpoint from D:/code stuff/BRAM/BRAM.srcs/utils_1/imports/synth_1/he.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:13 . Memory (MB): peak = 523.273 ; gain = 220.145
+Command: read_checkpoint -auto_incremental -incremental C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/utils_1/imports/synth_1/he.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/utils_1/imports/synth_1/he.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top VCore -part xc7s25csga324-1
 Starting synth_design
@@ -25,13 +26,12 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3432
+INFO: [Synth 8-7075] Helper process launched with PID 15724
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1242.559 ; gain = 541.527
+Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1238.836 ; gain = 542.574
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'my_Opcode', assumed default net type 'wire' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:90]
-INFO: [Synth 8-6157] synthesizing module 'VCore' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:24]
-INFO: [Synth 8-638] synthesizing module 'he' [d:/code stuff/BRAM/BRAM.gen/sources_1/ip/he/synth/he.vhd:80]
+INFO: [Synth 8-6157] synthesizing module 'VCore' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:24]
+INFO: [Synth 8-638] synthesizing module 'he' [c:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.gen/sources_1/ip/he/synth/he.vhd:80]
 	Parameter C_FAMILY bound to: spartan7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: spartan7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -80,8 +80,8 @@ INFO: [Synth 8-638] synthesizing module 'he' [d:/code stuff/BRAM/BRAM.gen/source
 	Parameter C_WRITE_DEPTH_B bound to: 4096 - type: integer 
 	Parameter C_READ_DEPTH_B bound to: 4096 - type: integer 
 	Parameter C_ADDRB_WIDTH bound to: 32 - type: integer 
-	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 1 - type: integer 
-	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 1 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 0 - type: integer 
+	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
 	Parameter C_HAS_MUX_OUTPUT_REGS_A bound to: 0 - type: integer 
 	Parameter C_HAS_MUX_OUTPUT_REGS_B bound to: 0 - type: integer 
 	Parameter C_MUX_PIPELINE_STAGES bound to: 0 - type: integer 
@@ -107,50 +107,43 @@ INFO: [Synth 8-638] synthesizing module 'he' [d:/code stuff/BRAM/BRAM.gen/source
 	Parameter C_COUNT_36K_BRAM bound to: 4 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     21.122702 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_12' declared at 'd:/code stuff/BRAM/BRAM.gen/sources_1/ip/he/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195209' bound to instance 'U0' of component 'blk_mem_gen_v8_4_12' [d:/code stuff/BRAM/BRAM.gen/sources_1/ip/he/synth/he.vhd:258]
-INFO: [Synth 8-256] done synthesizing module 'he' (0#1) [d:/code stuff/BRAM/BRAM.gen/sources_1/ip/he/synth/he.vhd:80]
-WARNING: [Synth 8-7071] port 'rsta' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'clkb' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'rstb' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'enb' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'web' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'addrb' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'dinb' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'doutb' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'rsta_busy' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7071] port 'rstb_busy' of module 'he' is unconnected for instance 'my_instruction_memory' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-WARNING: [Synth 8-7023] instance 'my_instruction_memory' of module 'he' has 16 connections declared, but only 6 given [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:38]
-INFO: [Synth 8-6157] synthesizing module 'register_file' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/Register_file.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'register_file' (0#1) [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/Register_file.v:1]
-INFO: [Synth 8-6157] synthesizing module 'Comparator' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/comparator.v:59]
-INFO: [Synth 8-6155] done synthesizing module 'Comparator' (0#1) [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/comparator.v:59]
-INFO: [Synth 8-6157] synthesizing module 'CU' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/CU.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'CU' (0#1) [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/CU.v:21]
-WARNING: [Synth 8-689] width (1) of port connection 'Opcode' does not match port width (5) of module 'CU' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:90]
-WARNING: [Synth 8-7071] port 'clk' of module 'CU' is unconnected for instance 'my_CU' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:83]
-WARNING: [Synth 8-7023] instance 'my_CU' of module 'CU' has 14 connections declared, but only 13 given [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:83]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/ALU.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/ALU.v:37]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/ALU.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'VCore' (0#1) [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:24]
-WARNING: [Synth 8-6014] Unused sequential element read2_en_reg was removed.  [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/CU.v:48]
-WARNING: [Synth 8-6014] Unused sequential element w_en_reg was removed.  [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/CU.v:49]
-WARNING: [Synth 8-3848] Net bram_write_enable in module/entity CU does not have driver. [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/CU.v:24]
-WARNING: [Synth 8-3848] Net led in module/entity VCore does not have driver. [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:27]
-WARNING: [Synth 8-3848] Net bram_data_in in module/entity VCore does not have driver. [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:32]
-WARNING: [Synth 8-3848] Net ALU_opcode in module/entity VCore does not have driver. [D:/code stuff/BRAM/BRAM.srcs/sources_1/new/VCore.v:99]
-WARNING: [Synth 8-7129] Port bram_write_enable[3] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_write_enable[2] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_write_enable[1] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_write_enable[0] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_data_out[31] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_data_out[30] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_data_out[29] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_data_out[28] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_data_out[27] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_data_out[26] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_data_out[25] in module CU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bram_data_out[24] in module CU is either unconnected or has no load
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_12' declared at 'c:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.gen/sources_1/ip/he/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195209' bound to instance 'U0' of component 'blk_mem_gen_v8_4_12' [c:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.gen/sources_1/ip/he/synth/he.vhd:258]
+INFO: [Synth 8-256] done synthesizing module 'he' (0#1) [c:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.gen/sources_1/ip/he/synth/he.vhd:80]
+WARNING: [Synth 8-7071] port 'rsta' of module 'he' is unconnected for instance 'my_instruction_memory' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:40]
+WARNING: [Synth 8-7071] port 'rstb' of module 'he' is unconnected for instance 'my_instruction_memory' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:40]
+WARNING: [Synth 8-7071] port 'web' of module 'he' is unconnected for instance 'my_instruction_memory' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:40]
+WARNING: [Synth 8-7071] port 'dinb' of module 'he' is unconnected for instance 'my_instruction_memory' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:40]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'he' is unconnected for instance 'my_instruction_memory' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:40]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'he' is unconnected for instance 'my_instruction_memory' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:40]
+WARNING: [Synth 8-7023] instance 'my_instruction_memory' of module 'he' has 16 connections declared, but only 10 given [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:40]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/Register_file.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (0#1) [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/Register_file.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Comparator' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/comparator.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'Comparator' (0#1) [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/comparator.v:21]
+WARNING: [Synth 8-7071] port 'w_en' of module 'Comparator' is unconnected for instance 'my_comparator' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:88]
+WARNING: [Synth 8-7023] instance 'my_comparator' of module 'Comparator' has 5 connections declared, but only 4 given [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:88]
+INFO: [Synth 8-6157] synthesizing module 'CU' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/CU.v:4]
+INFO: [Synth 8-226] default block is never used [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/CU.v:44]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/CU.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'CU' (0#1) [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/CU.v:4]
+WARNING: [Synth 8-7071] port 'comparator_en' of module 'CU' is unconnected for instance 'my_CU' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:104]
+WARNING: [Synth 8-7023] instance 'my_CU' of module 'CU' has 28 connections declared, but only 27 given [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:104]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/ALU.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'load_store_formatter' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/load_store_formatter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'load_store_formatter' (0#1) [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/load_store_formatter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux' [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/MUX.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux' (0#1) [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/MUX.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'VCore' (0#1) [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:24]
+WARNING: [Synth 8-6014] Unused sequential element delay_reg was removed.  [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/CU.v:56]
+WARNING: [Synth 8-6014] Unused sequential element temp_imm_18_reg was removed.  [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/CU.v:226]
+WARNING: [Synth 8-3848] Net comparator_en in module/entity CU does not have driver. [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/CU.v:18]
+WARNING: [Synth 8-3848] Net led in module/entity VCore does not have driver. [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/sources_1/new/VCore.v:27]
+WARNING: [Synth 8-7129] Port clk in module load_store_formatter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port comparator_en in module CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clkcmp in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port w_en in module Comparator is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CLKB in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SBITERR_I in module blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DBITERR_I in module blk_mem_output_block is either unconnected or has no load
@@ -200,7 +193,9 @@ WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_prim_wrapper_in
 WARNING: [Synth 8-7129] Port ECCPIPECE in module blk_mem_gen_prim_wrapper_init is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MUX_RST[0] in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MEM_LAT_RST in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_REG_RST in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MUX_REGCE[0] in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_REGCE in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port WE in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR_IN[11] in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR_IN[10] in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
@@ -233,65 +228,85 @@ WARNING: [Synth 8-7129] Port DBITERRIN[0] in module blk_mem_gen_mux__parameteriz
 WARNING: [Synth 8-7129] Port ECCPIPECE in module blk_mem_gen_mux__parameterized0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MUX_RST[0] in module blk_mem_gen_mux is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MEM_LAT_RST in module blk_mem_gen_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_REG_RST in module blk_mem_gen_mux is either unconnected or has no load
 WARNING: [Synth 8-7129] Port MUX_REGCE[0] in module blk_mem_gen_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_REGCE in module blk_mem_gen_mux is either unconnected or has no load
 WARNING: [Synth 8-7129] Port WE in module blk_mem_gen_mux is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR_IN[11] in module blk_mem_gen_mux is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR_IN[10] in module blk_mem_gen_mux is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR_IN[9] in module blk_mem_gen_mux is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR_IN[8] in module blk_mem_gen_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR_IN[7] in module blk_mem_gen_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR_IN[6] in module blk_mem_gen_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR_IN[5] in module blk_mem_gen_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR_IN[4] in module blk_mem_gen_mux is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished RTL Elaboration : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 1637.117 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.103 . Memory (MB): peak = 1633.480 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/code stuff/test/Arty-S7-25-Master.xdc]
-Finished Parsing XDC File [D:/code stuff/test/Arty-S7-25-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/code stuff/test/Arty-S7-25-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/VCore_propImpl.xdc].
+Parsing XDC File [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/constrs_1/imports/test/Arty-S7-25-Master.xdc]
+Finished Parsing XDC File [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/constrs_1/imports/test/Arty-S7-25-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/constrs_1/imports/test/Arty-S7-25-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/VCore_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/VCore_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [D:/code stuff/BRAM/BRAM.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [D:/code stuff/BRAM/BRAM.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1637.117 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1633.480 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 1637.117 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 1633.480 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished Constraint Validation : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s25csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:04 ; elapsed = 00:01:07 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'CU'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   FETCH |                              000 |                              000
+              FETCH_WAIT |                              001 |                              111
+                  DECODE |                              010 |                              001
+                 EXECUTE |                              011 |                              010
+              WRITE_BACK |                              100 |                              100
+            INCREMENT_PC |                              101 |                              011
+                PC_WRITE |                              110 |                              101
+                 PC_DONE |                              111 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'CU'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:06 ; elapsed = 00:01:09 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -311,26 +326,29 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[2]) is unused and will be removed from module CU.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[1]) is unused and will be removed from module CU.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_state_reg[0]) is unused and will be removed from module CU.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:36 ; elapsed = 00:01:43 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished Timing Optimization : Time (s): cpu = 00:01:36 ; elapsed = 00:01:43 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 1637.117 ; gain = 936.086
+Finished Technology Mapping : Time (s): cpu = 00:01:36 ; elapsed = 00:01:43 . Memory (MB): peak = 1633.480 ; gain = 937.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -348,37 +366,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:15 ; elapsed = 00:01:17 . Memory (MB): peak = 1843.031 ; gain = 1142.000
+Finished IO Insertion : Time (s): cpu = 00:01:54 ; elapsed = 00:02:02 . Memory (MB): peak = 1845.578 ; gain = 1149.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1843.031 ; gain = 1142.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:54 ; elapsed = 00:02:02 . Memory (MB): peak = 1845.578 ; gain = 1149.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1843.031 ; gain = 1142.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:54 ; elapsed = 00:02:03 . Memory (MB): peak = 1845.578 ; gain = 1149.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1843.031 ; gain = 1142.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:54 ; elapsed = 00:02:03 . Memory (MB): peak = 1845.578 ; gain = 1149.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1843.031 ; gain = 1142.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:54 ; elapsed = 00:02:03 . Memory (MB): peak = 1845.578 ; gain = 1149.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1843.031 ; gain = 1142.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:54 ; elapsed = 00:02:03 . Memory (MB): peak = 1845.578 ; gain = 1149.316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -397,26 +415,25 @@ Report Cell Usage:
 |1     |OBUFT |     4|
 +------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1843.031 ; gain = 1142.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 1845.578 ; gain = 1149.316
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 196 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:01:12 . Memory (MB): peak = 1843.031 ; gain = 1142.000
-Synthesis Optimization Complete : Time (s): cpu = 00:01:15 ; elapsed = 00:01:18 . Memory (MB): peak = 1843.031 ; gain = 1142.000
+Synthesis finished with 0 errors, 0 critical warnings and 201 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:05 ; elapsed = 00:01:56 . Memory (MB): peak = 1845.578 ; gain = 1149.316
+Synthesis Optimization Complete : Time (s): cpu = 00:01:55 ; elapsed = 00:02:03 . Memory (MB): peak = 1845.578 ; gain = 1149.316
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1843.031 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1845.578 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1847.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1854.094 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete | Checksum: 90083609
 INFO: [Common 17-83] Releasing license: Synthesis
-37 Infos, 120 Warnings, 0 Critical Warnings and 0 Errors encountered.
+44 Infos, 118 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.statsThreshold
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1847.496 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'D:/code stuff/BRAM/BRAM.runs/synth_1/VCore.dcp' has been generated.
+synth_design: Time (s): cpu = 00:02:03 ; elapsed = 00:02:16 . Memory (MB): peak = 1854.094 ; gain = 1318.102
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1854.094 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.runs/synth_1/VCore.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file VCore_utilization_synth.rpt -pb VCore_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat May 30 15:06:51 2026...
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 21 09:52:46 2026...

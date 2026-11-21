@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "tb_load_store_formatter_behav" "xil_defaultlib.tb_load_store_formatter" "xil_defaultlib.glbl" -log "elaborate.log" 

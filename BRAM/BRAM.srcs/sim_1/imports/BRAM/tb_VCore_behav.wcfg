@@ -3,74 +3,25 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_VCore_behav.wdb" id="1">
+      <db_ref path="tb_fibloop_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="tb_VCore" />
+            <top_module name="tb_fibloop" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,392.313 ns"></ZoomEndTime>
-      <Cursor1Time time="700.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="2.784627 us"></ZoomEndTime>
+      <Cursor1Time time="0.700000 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="225"></NameColumnWidth>
-      <ValueColumnWidth column_width="109"></ValueColumnWidth>
+      <ValueColumnWidth column_width="103"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
-   <wvobject fp_name="/tb_VCore/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/led" type="array">
-      <obj_property name="ElementShortName">led[3:0]</obj_property>
-      <obj_property name="ObjectShortName">led[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_CU/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_register_file/w_data" type="array">
-      <obj_property name="ElementShortName">w_data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">w_data[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_register_file/w_en" type="logic">
-      <obj_property name="ElementShortName">w_en</obj_property>
-      <obj_property name="ObjectShortName">w_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_register_file/w_addr" type="array">
-      <obj_property name="ElementShortName">w_addr[4:0]</obj_property>
-      <obj_property name="ObjectShortName">w_addr[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_register_file/registers[2]" type="array">
-      <obj_property name="ElementShortName">[2][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_CU/state" type="array">
+   <WVObjectSize size="1" />
+   <wvobject fp_name="/tb_fibloop/dut/my_CU/state" type="array">
       <obj_property name="ElementShortName">state[2:0]</obj_property>
       <obj_property name="ObjectShortName">state[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_instruction_memory/addrb" type="array">
-      <obj_property name="ElementShortName">addrb[31:0]</obj_property>
-      <obj_property name="ObjectShortName">addrb[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_instruction_memory/doutb" type="array">
-      <obj_property name="ElementShortName">doutb[31:0]</obj_property>
-      <obj_property name="ObjectShortName">doutb[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_instruction_memory/addra" type="array">
-      <obj_property name="ElementShortName">addra[31:0]</obj_property>
-      <obj_property name="ObjectShortName">addra[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb_VCore/uut/my_instruction_memory/douta" type="array">
-      <obj_property name="ElementShortName">douta[31:0]</obj_property>
-      <obj_property name="ObjectShortName">douta[31:0]</obj_property>
    </wvobject>
 </wave_config>

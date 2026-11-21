@@ -3,12 +3,12 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Sat May 30 15:05:02 2026
-# Process ID         : 11432
-# Current directory  : D:/code stuff/BRAM/BRAM.runs/synth_1
+# Start of session at: Sat Nov 21 09:50:07 2026
+# Process ID         : 13544
+# Current directory  : C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.runs/synth_1
 # Command line       : vivado.exe -log VCore.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source VCore.tcl
-# Log file           : D:/code stuff/BRAM/BRAM.runs/synth_1/VCore.vds
-# Journal file       : D:/code stuff/BRAM/BRAM.runs/synth_1\vivado.jou
+# Log file           : C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.runs/synth_1/VCore.vds
+# Journal file       : C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.runs/synth_1\vivado.jou
 # Running On         : Terrified-mushroom
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 22000
@@ -17,8 +17,8 @@
 # CPU Physical cores : 6
 # CPU Logical cores  : 12
 # Host memory        : 6297 MB
-# Swap memory        : 10200 MB
-# Total Virtual      : 16498 MB
-# Available Virtual  : 4792 MB
+# Swap memory        : 11811 MB
+# Total Virtual      : 18108 MB
+# Available Virtual  : 3296 MB
 #-----------------------------------------------------------
 source VCore.tcl -notrace

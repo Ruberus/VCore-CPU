@@ -1,27 +1,32 @@
 //fix read en
 //reado_4 doesn't have an enable flag
-module register_file (PC_read, reado_1, reado_2, reado_4, w_data, read_1_addr,read_4_addr, read_2_addr, w_addr, read1_en, read2_en, w_en, clk, RF_Opcode, mov_addr);
+module register_file (PC_read, reado_1, reado_2, reado_4, w_data, read_1_addr,read_4_addr, read_2_addr, w_addr, read1_en, read2_en, read4_en, w_en, clk, RF_Opcode, mov_addr,reset);
 
 output reg [31:0] reado_1, reado_2, reado_4;
 output wire [31:0]PC_read;
 input [31:0] w_data;
-input read1_en, read2_en, w_en;
-input clk;
+//input read1_en, read2_en, w_en;
+input read1_en, read2_en, w_en, read4_en;
+input clk,reset;
 input [4:0] read_1_addr, read_2_addr, w_addr, RF_Opcode, mov_addr, read_4_addr;
 
 reg [31:0] registers [31:0];
+integer i;
 
-initial begin
-registers[0]=32'b0;
-registers[1]=32'b0;
-registers[2]=32'b00000000000000000000000000000000;
-registers[3]=32'b00000000000000000000000000000001;
-registers[4]=32'b0;
-end
+
 
 assign PC_read = registers[1];
 
 always @(posedge clk) begin
+    if (!reset) begin
+        // Synchronous reset: clear every register and the output registers
+        for (i = 0; i < 32; i = i + 1)
+            registers[i] <= 32'b0;
+        reado_1 <= 32'b0;
+        reado_2 <= 32'b0;
+        reado_4 <= 32'b0;
+    end
+    else begin
     if (RF_Opcode==5'b01011) begin
         registers[mov_addr] <= registers[read_1_addr];
     end
@@ -40,8 +45,11 @@ always @(posedge clk) begin
             begin
             reado_2 <= registers[read_2_addr];
         end
-       reado_4 <= registers[read_4_addr];
+        if(read4_en)
+        begin
+          reado_4 <= registers[read_4_addr];
+        end
     end
-
+   end
 
 endmodule

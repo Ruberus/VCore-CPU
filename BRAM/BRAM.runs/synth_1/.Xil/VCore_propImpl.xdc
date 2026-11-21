@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:{D:/code stuff/test/Arty-S7-25-Master.xdc} rfile:../../../../test/Arty-S7-25-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.srcs/constrs_1/imports/test/Arty-S7-25-Master.xdc rfile:../../../BRAM.srcs/constrs_1/imports/test/Arty-S7-25-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN F14   IOSTANDARD LVCMOS33 } [get_ports { clk }]; #IO_L13P_T2_MRCC_15 Sch=uclk
 set_property src_info {type:XDC file:1 line:27 export:INPUT save:INPUT read:READ} [current_design]

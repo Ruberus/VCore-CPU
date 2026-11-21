@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef" \
+verilog xil_defaultlib  --include "D:/data_for_programs/2025.2/Vivado/data/rsb/busdef" \
 "../../../../BRAM.gen/sources_1/ip/he/sim/he.v" \
 "../../../../BRAM.srcs/sources_1/new/ALU.v" \
 "../../../../BRAM.srcs/sources_1/new/CU.v" \
@@ -8,7 +8,7 @@ verilog xil_defaultlib  --include "../../../../../../../../../AMDDesignTools/202
 "../../../../BRAM.srcs/sources_1/new/VCore.v" \
 "../../../../BRAM.srcs/sources_1/new/comparator.v" \
 "../../../../BRAM.srcs/sources_1/new/load_store_formatter.v" \
-"../../../../BRAM.srcs/sim_1/new/tb_VCore.v" \
+"../../../../BRAM.srcs/sim_1/new/tb_fibonacci.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/code stuff/BRAM/BRAM.runs/synth_1'
+HD_PWD='C:/Users/rajan/Downloads/rubertini/rubertini/VCore-CPU/BRAM/BRAM.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

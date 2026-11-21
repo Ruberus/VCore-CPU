@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+//outputs value based on selmux
 module mux(
     input wire [31:0] in0,//CU
     input wire [31:0] in1,//ALU LS
@@ -28,8 +29,15 @@ module mux(
 
 always @(*) begin
     case (selmux)
-        1'b0: out <= in0;
-        1'b1: out <= in1;
+   // this code is correct but
+   // we should use non blocking i.r =
+    //    1'b0: out <= in0;
+    //    1'b1: out <= in1;
+   //changes: use = blocking
+   //why: we usually use blocking assignment
+   //in combinatory circuits
+    1'b0: out = in0;
+    1'b1: out = in1;
     endcase
 end
 
