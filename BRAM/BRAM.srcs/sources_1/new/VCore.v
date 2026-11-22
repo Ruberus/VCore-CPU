@@ -22,12 +22,13 @@
 
 
 module VCore (
-    input wire clk,       // This EXACT name fixes your .xdc constraint error
-    input wire reset,     // You'll likely need a reset button mapped in your .xdc
-    output wire [3:0] led // Just an example of outputting to the board's LEDs
+    input wire clk,       
+    input wire reset,     
+    output wire [3:0] led, 
+    output wire [5:0] rgb,
+    input  wire [3:0] sw
 );
 
-    // 1. Declare internal wires to connect your CPU to the BRAM
     wire [31:0] bram_data_out;
     wire [31:0] bram_data_in;
     wire [31:0] bram_address;
@@ -60,6 +61,9 @@ module VCore (
     wire [31:0] my_w_data;
     wire my_read1_en, my_read2_en, my_w_en,read4_en;
     wire [4:0] my_read_1_addr, my_read_2_addr, my_w_addr, my_mov_addr, my_RF_Opcode, my_read_4_addr;
+    wire fetching;
+    wire comparator_en;
+    assign rgb = {my_PC_read[7:5], my_PC_read[4:2]};
     
     register_file my_register_file (   
         .PC_read(my_PC_read),
@@ -78,7 +82,10 @@ module VCore (
         .RF_Opcode(my_RF_Opcode),
         .mov_addr(my_mov_addr),
         .reset(reset),
-        .read4_en(read4_en)
+        .read4_en(read4_en),
+        .sw(sw),
+        .sample_en(fetching),
+        .led_out(led)
         );
                 
     wire [3:0] my_ins_cond;
@@ -132,7 +139,8 @@ module VCore (
     .reg4_addr(my_read_4_addr),
     .w_en_a(bram_write_enable),
     .reset(reset),
-    .read4_en(read4_en)
+    .read4_en(read4_en),
+    .fetching(fetching)
     );
     
     //figure out how many bits is ALUOpcode in actuality

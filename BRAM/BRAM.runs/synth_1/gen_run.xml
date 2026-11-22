@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s25csga324-1" LaunchTime="1795234802" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/he.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7s25csga324-1" LaunchTime="1795259594" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/he.dcp">
+  <File Type="PA-TCL" Name="VCore.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="VCore_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="VCore_reports.tcl"/>
+  <File Type="RDS-RDS" Name="VCore.vds"/>
   <File Type="RDS-UTIL" Name="VCore_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="VCore_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="VCore.tcl"/>
-  <File Type="RDS-RDS" Name="VCore.vds"/>
   <File Type="RDS-DCP" Name="VCore.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="VCore_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="VCore_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/notepad files/load_testing.coe">

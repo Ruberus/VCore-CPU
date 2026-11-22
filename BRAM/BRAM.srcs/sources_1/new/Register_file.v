@@ -1,6 +1,6 @@
 //fix read en
 //reado_4 doesn't have an enable flag
-module register_file (PC_read, reado_1, reado_2, reado_4, w_data, read_1_addr,read_4_addr, read_2_addr, w_addr, read1_en, read2_en, read4_en, w_en, clk, RF_Opcode, mov_addr,reset);
+module register_file (PC_read, reado_1, reado_2, reado_4, w_data, read_1_addr,read_4_addr, read_2_addr, w_addr, read1_en, read2_en, read4_en, w_en, clk, RF_Opcode, mov_addr,reset, sw,sample_en,led_out);
 
 output reg [31:0] reado_1, reado_2, reado_4;
 output wire [31:0]PC_read;
@@ -9,13 +9,16 @@ input [31:0] w_data;
 input read1_en, read2_en, w_en, read4_en;
 input clk,reset;
 input [4:0] read_1_addr, read_2_addr, w_addr, RF_Opcode, mov_addr, read_4_addr;
+input [3:0] sw; 
+input sample_en;
+output wire [3:0] led_out;
+
 
 reg [31:0] registers [31:0];
 integer i;
 
-
-
 assign PC_read = registers[1];
+assign led_out = registers[6][3:0];
 
 always @(posedge clk) begin
     if (!reset) begin
@@ -49,6 +52,7 @@ always @(posedge clk) begin
         begin
           reado_4 <= registers[read_4_addr];
         end
+        if (sample_en) registers[2] <= {28'b0, sw};
     end
    end
 

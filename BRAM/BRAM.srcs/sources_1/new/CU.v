@@ -15,7 +15,8 @@ module CU(
     output reg [4:0] reg1_addr,reg2_addr,reg3_addr,mov_addr,reg4_addr,
     output reg read1_en,read2_en, read4_en,w_en,selmux,seldemux,load_selmux,input_B_selmux,
     output reg [31:0] extended_data, imm_18,
-    output reg comparator_en                           
+    output reg comparator_en,
+    output wire fetching                          
 );
 
 localparam FETCH= 3'b000;
@@ -35,6 +36,8 @@ reg [12:0] imm_13;
 reg [17:0] temp_imm_18;
 reg [2:0] delay;
 reg PC_write;
+
+assign fetching = (state == FETCH);
 
     always @(posedge clk) begin
     if (!reset) begin

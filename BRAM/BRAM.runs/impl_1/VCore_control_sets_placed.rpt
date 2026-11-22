@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sat Nov 21 09:58:06 2026
+| Date         : Sat Nov 21 16:50:35 2026
 | Host         : Terrified-mushroom running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file VCore_control_sets_placed.rpt
 | Design       : VCore
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     0 |
-|    Minimum number of control sets                        |     0 |
+| Total control sets                                       |    49 |
+|    Minimum number of control sets                        |    49 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |     0 |
+| Unused register locations in slices containing registers |    56 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     0 |
-| >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     0 |
-| >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     0 |
+| Total control sets |    49 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     6 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     0 |
+| >= 12 to < 14      |     2 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     0 |
+| >= 16              |    37 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,20 +58,70 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | No                     |              24 |           13 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              83 |           30 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               0 |            0 |
+| Yes          | Yes                   | No                     |            1133 |          642 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------+---------------+------------------+------------------+----------------+--------------+
-| Clock Signal | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+--------------+---------------+------------------+------------------+----------------+--------------+
++----------------+----------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |              Enable Signal             |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+----------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | my_CU/w_en_a[2]_i_1_n_0                |                                            |                1 |              3 |         3.00 |
+|  clk_IBUF_BUFG | my_CU/FSM_sequential_state_reg[2]_0[0] | my_register_file/registers[31][31]_i_1_n_0 |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | my_CU/comparator_en_reg_0[0]           |                                            |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG | my_CU/reg3_addr[4]_i_2_n_0             | my_CU/reg3_addr[4]_i_1_n_0                 |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | my_CU/mov_addr[4]_i_1_n_0              |                                            |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | my_CU/LS_Opcode[4]_i_1_n_0             |                                            |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG | my_CU/reg1_addr[4]_i_2_n_0             | my_CU/reg1_addr[4]_i_1_n_0                 |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG | my_CU/reg4_addr[4]_i_1_n_0             |                                            |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | my_CU/reg2_addr[4]_i_1_n_0             |                                            |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | my_CU/Opcode[4]_i_1_n_0                |                                            |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG | my_CU/bram_address[13]_i_1_n_0         |                                            |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG | my_CU/extended_data[12]_i_1_n_0        |                                            |                4 |             13 |         3.25 |
+|  clk_IBUF_BUFG | my_CU/imm_18[17]_i_1_n_0               |                                            |                8 |             18 |         2.25 |
+|  clk_IBUF_BUFG |                                        |                                            |               13 |             25 |         1.92 |
+|  clk_IBUF_BUFG | my_CU/FSM_sequential_state_reg[2]_0[0] | my_CU/SR[0]                                |               20 |             28 |         1.40 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_24[0]           | my_register_file/registers[31][31]_i_1_n_0 |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_18[0]           | my_register_file/registers[31][31]_i_1_n_0 |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_2[0]            | my_register_file/registers[31][31]_i_1_n_0 |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_0[0]            | my_register_file/registers[31][31]_i_1_n_0 |               24 |             32 |         1.33 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_1[0]            | my_register_file/registers[31][31]_i_1_n_0 |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_13[0]           | my_register_file/registers[31][31]_i_1_n_0 |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_10[0]           | my_register_file/registers[31][31]_i_1_n_0 |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_16[0]           | my_register_file/registers[31][31]_i_1_n_0 |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_4[0]            | my_register_file/registers[31][31]_i_1_n_0 |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_19[0]           | my_register_file/registers[31][31]_i_1_n_0 |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_25[0]           | my_register_file/registers[31][31]_i_1_n_0 |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_7[0]            | my_register_file/registers[31][31]_i_1_n_0 |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_26[0]           | my_register_file/registers[31][31]_i_1_n_0 |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_8[0]            | my_register_file/registers[31][31]_i_1_n_0 |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_3[0]            | my_register_file/registers[31][31]_i_1_n_0 |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_6[0]            | my_register_file/registers[31][31]_i_1_n_0 |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_27[0]           | my_register_file/registers[31][31]_i_1_n_0 |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_5[0]            | my_register_file/registers[31][31]_i_1_n_0 |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | my_CU/mov_addr_reg[3]_0[0]             | my_register_file/registers[31][31]_i_1_n_0 |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | my_CU/mov_addr_reg[3]_1[0]             | my_register_file/registers[31][31]_i_1_n_0 |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_12[0]           | my_register_file/registers[31][31]_i_1_n_0 |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | my_CU/read1_en_reg_0[0]                | my_register_file/registers[31][31]_i_1_n_0 |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | my_CU/wea[0]                           | my_register_file/registers[31][31]_i_1_n_0 |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_14[0]           | my_register_file/registers[31][31]_i_1_n_0 |               23 |             32 |         1.39 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_20[0]           | my_register_file/registers[31][31]_i_1_n_0 |               23 |             32 |         1.39 |
+|  clk_IBUF_BUFG | my_CU/E[0]                             | my_register_file/registers[31][31]_i_1_n_0 |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_9[0]            | my_register_file/registers[31][31]_i_1_n_0 |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_11[0]           | my_register_file/registers[31][31]_i_1_n_0 |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_15[0]           | my_register_file/registers[31][31]_i_1_n_0 |               22 |             32 |         1.45 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_17[0]           | my_register_file/registers[31][31]_i_1_n_0 |               24 |             32 |         1.33 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_21[0]           | my_register_file/registers[31][31]_i_1_n_0 |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_22[0]           | my_register_file/registers[31][31]_i_1_n_0 |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | my_CU/read2_en_reg_0[0]                | my_register_file/registers[31][31]_i_1_n_0 |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | my_CU/RF_Opcode_reg[3]_23[0]           | my_register_file/registers[31][31]_i_1_n_0 |               17 |             36 |         2.12 |
++----------------+----------------------------------------+--------------------------------------------+------------------+----------------+--------------+
 
 
